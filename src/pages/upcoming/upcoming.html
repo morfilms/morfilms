@@ -1,0 +1,20 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>{{ 'upcoming_title' | translate }}</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="openSettings()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div padding *ngIf="emptyMessage[0]">
+		<p>{{ 'upcoming_empty1' | translate }} <br> {{ 'upcoming_empty2' | translate }}</p>
+	</div>
+
+	<ng-container *ngFor="let film of list">
+		<film-card [film]="film" *ngIf="film.release_country_days > 0" (tap)="showFilmDetails($event, film)" (press)="showPressMenu($event, film)"></film-card>
+	</ng-container>
+</ion-content>

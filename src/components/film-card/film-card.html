@@ -1,0 +1,9 @@
+<div tappable class="list-film-card" [ngStyle]="{'background-image': getBackdrop(film)}">
+
+	<div class="list-film-card-gradient"></div>
+
+	<div text-uppercase class="list-film-title">{{film.title}}</div>
+
+	<div *ngIf="film.release_country_days > 0 && film.release_country_days < 999" class="list-film-days-remaining"><span style="font-size: 20px;">{{film.release_country_days}}</span><br><span style="font-size: 9px;">{{'upcoming_days' | translate}}</span></div>
+
+</div>

@@ -1,0 +1,93 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>{{ film.title }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-fab top left *ngIf="film.backdrop_path || film.poster_path">
+		<button ion-fab mini color="secondary" mode="md"><ion-icon name="menu"></ion-icon></button>
+		<ion-fab-list side="right">
+			<button ion-fab color="primary" (click)="share()"><ion-icon name="share-alt"></ion-icon></button>
+			<button ion-fab [hidden]="film.added" color="light" (click)="addFilm()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+			<button ion-fab [hidden]="!film.added" color="light" (click)="removeFilm()">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+		</ion-fab-list>
+	</ion-fab>
+
+	<div *ngIf="film.backdrop_path || film.poster_path" class="film-backdrop" [ngStyle]="{'background-image': getBackdrop()}">
+		<div *ngIf="film.vote_average && !noaverage" class="vote-average" [attr.id]="getVoteID()"></div>
+	</div>
+	<div padding>
+		<h1 text-uppercase><b>{{film.title}}</b></h1>
+		<h2 text-uppercase *ngIf="film.title != film.original_title">{{ 'original_title' | translate }}: {{film.original_title}}</h2>
+		<h2 text-uppercase *ngIf="film.title == film.original_title && film.tagline">{{film.tagline}}</h2>
+		<span class="span text-info" *ngIf="getRuntime()">{{getRuntime()}}</span>
+		<span class="span text-info" *ngIf="getRuntime() && film.genres.length > 0"> | </span>
+		<span class="span text-info" *ngFor="let genre of getGenres(); let isLast=last">{{genre}}{{isLast ? '' : ', '}}</span>
+		<span class="span text-info" *ngIf="film.genres.length > 0 && getReleaseDate()"> | </span>
+		<span class="span text-info" *ngIf="getReleaseDate()">{{getReleaseDate()}}</span>
+
+		<p *ngIf="getDirector().length > 0 || getCast().length > 0">
+			<span class="span" *ngIf="getDirector().length > 0">
+        <b>{{ 'director' | translate }}: </b>
+        <span tappable class="span" *ngFor="let director of getDirector(); let isLast=last" (click)="showPersonDetails(director)">
+          {{ director.name }}{{ isLast ? '.' : ', ' }}
+        </span>
+			</span>
+			<br>
+			<span class="span" *ngIf="getCast().length > 0">
+        <b>{{ 'cast' | translate }}: </b>
+        <span tappable class="span" *ngFor="let cast of getCast(); let isLast=last" (click)="showPersonDetails(cast)">
+          {{ cast.name }}{{ isLast ? '.' : ', ' }}
+        </span>
+			</span>
+		</p>
+
+		<p *ngIf="film.overview">{{film.overview}}</p>
+	</div>
+
+	<ion-list *ngIf="film.credits.cast.length > 0 || film.credits.crew.length > 0">
+		<ion-list-header>
+			{{ 'cast_and_crew' | translate }}
+		</ion-list-header>
+		<button ion-item *ngIf="film.credits.crew.length > 0" (click)="showCrew()">
+      {{ 'all_crew' | translate }}
+    </button>
+		<button ion-item *ngIf="film.credits.cast.length > 0" (click)="showCast()">
+      {{ 'all_cast' | translate }}
+    </button>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			{{ 'external_links' | translate }}
+		</ion-list-header>
+		<a *ngIf="film.imdb_id" ion-item href="http://www.imdb.com/title/{{film.imdb_id}}">IMDb</a>
+		<a *ngIf="getTrailer()" ion-item href="https://www.youtube.com/watch?v={{getTrailer()}}">{{ 'watch_trailer' | translate }}</a>
+		<a *ngIf="film.title" ion-item href="https://www.google.com/search?q={{film.title}}#mie=e,overview,{{film.title}}">{{ 'showtimes_info' | translate }}</a>
+	</ion-list>
+
+	<ion-list *ngIf="!film.backdrop_path && !film.poster_path">
+		<ion-list-header>
+			{{ 'actions' | translate }}
+		</ion-list-header>
+		<button ion-item *ngIf="film.added" (click)="removeFilm()">
+      <ion-icon name="md-checkmark" item-left></ion-icon>
+      {{ 'remove_film' | translate }}
+    </button>
+		<button ion-item *ngIf="!film.added" (click)="addFilm()">
+      <ion-icon name="md-add" item-left></ion-icon>
+      {{ 'add_film' | translate }}
+    </button>
+		<button ion-item (click)="share()">
+      <ion-icon name="share-alt" item-left></ion-icon>
+      {{ 'share_film' | translate }}
+    </button>
+	</ion-list>
+
+</ion-content>

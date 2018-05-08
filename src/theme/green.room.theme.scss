@@ -1,0 +1,84 @@
+$green-text-light: #FFFFFF;
+$green-text-dark: #0b0b0b;
+$green-base: #212121;
+$green-primary: #4CAF50;
+$green-secondary: #2E7D32;
+
+.green-room-theme {
+
+	ion-content {
+		background-color: $green-base;
+		color: $green-text-light;
+	}
+
+	.toolbar-background {
+		background-color: $green-primary !important;
+	}
+
+	.toolbar-title {
+		color: $green-text-dark !important;
+	}
+
+	.bar-button {
+		color: $green-text-dark !important;
+	}
+
+	.tabbar {
+		border-color: $green-secondary !important;
+		background-color: $green-primary !important;
+	}
+
+	.tab-button-icon {
+		color: $green-text-dark !important;
+	}
+
+	.item {
+		color: $green-text-light;
+	}
+
+	.item-input {
+		background-color: $green-base !important;
+	}
+
+	.fab-md-secondary {
+		color: $green-text-dark !important;
+		background-color: $green-primary !important;
+	}
+
+	// MD
+
+	.list-md {
+		background-color: $green-base;
+	}
+
+	.item-md {
+		background-color: $green-base;
+	}
+
+	.list-header-md {
+		background-color: $green-base;
+	}
+
+	// IOS
+
+	.item-ios {
+		background-color: $green-base;
+	}
+
+	.list-header-ios {
+		background-color: $green-base;
+	}
+
+	// MORFILMS
+
+	.list-film-days-remaining {
+		color: $green-text-dark !important;
+		background-color: $green-primary !important;
+		border-color: $green-secondary !important;
+	}
+
+	.list-film-card {
+		background-color: $green-secondary !important;
+	}
+
+}

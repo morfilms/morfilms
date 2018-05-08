@@ -1,0 +1,14 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>{{ person.name }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div *ngIf="person.profile_path" class="person-avatar" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w780' + person.profile_path + ')'}"></div>
+	<div text-uppercase class="person-name"> <b>{{ person.name }}</b> </div>
+
+	<ng-container *ngFor="let film of films">
+		<film-item [film]="film"></film-item>
+	</ng-container>
+</ion-content>

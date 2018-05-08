@@ -1,0 +1,155 @@
+<ion-header>
+	<ion-navbar color="dark">
+		<ion-buttons start>
+			<button ion-button (click)="dismiss()">
+        {{ 'close' | translate }}
+      </button>
+		</ion-buttons>
+		<ion-title>
+			{{ 'settings_title' | translate }}
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-list>
+		<ion-list-header>
+			{{ 'international' | translate }}
+		</ion-list-header>
+
+		<ion-item>
+			<ion-icon name="md-flag" item-left></ion-icon>
+			<ion-label>{{ 'country' | translate }}</ion-label>
+			<ion-select [(ngModel)]="country" interface="popover" (ionChange)="saveCountry()">
+				<ion-option value="AR">{{ 'argentina' | translate }}</ion-option>
+				<ion-option value="BR">{{ 'brazil' | translate }}</ion-option>
+				<ion-option value="CL">{{ 'chile' | translate }}</ion-option>
+				<ion-option value="DO">{{ 'dominican_republic' | translate }}</ion-option>
+				<ion-option value="CO">{{ 'colombia' | translate }}</ion-option>
+				<ion-option value="FR">{{ 'france' | translate }}</ion-option>
+				<ion-option value="DE">{{ 'germany' | translate }}</ion-option>
+				<ion-option value="GR">{{ 'greece' | translate }}</ion-option>
+				<ion-option value="IN">{{ 'india' | translate }}</ion-option>
+				<ion-option value="IT">{{ 'italy' | translate }}</ion-option>
+				<ion-option value="JP">{{ 'japan' | translate }}</ion-option>
+				<ion-option value="KR">{{ 'south_korea' | translate }}</ion-option>
+				<ion-option value="MX">{{ 'mexico' | translate }}</ion-option>
+				<ion-option value="NL">{{ 'netherlands' | translate }}</ion-option>
+				<ion-option value="NO">{{ 'norway' | translate }}</ion-option>
+				<ion-option value="PE">{{ 'peru' | translate }}</ion-option>
+				<ion-option value="PL">{{ 'poland' | translate }}</ion-option>
+				<ion-option value="PT">{{ 'portugal' | translate }}</ion-option>
+				<ion-option value="RU">{{ 'russia' | translate }}</ion-option>
+				<ion-option value="ES">{{ 'spain' | translate }}</ion-option>
+				<ion-option value="CH">{{ 'switzerland' | translate }}</ion-option>
+				<ion-option value="UA">{{ 'ukraine' | translate }}</ion-option>
+				<ion-option value="GB">{{ 'united_kingdom' | translate }}</ion-option>
+				<ion-option value="US">{{ 'united_states' | translate }}</ion-option>
+			</ion-select>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="md-globe" item-left></ion-icon>
+			<ion-label>{{ 'language' | translate }}</ion-label>
+			<ion-select [(ngModel)]="language" interface="popover" (ionChange)="saveLanguage()">
+				<ion-option value="en">{{ 'english' | translate }}</ion-option>
+				<ion-option value="es">{{ 'spanish' | translate }}</ion-option>
+			</ion-select>
+		</ion-item>
+
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			{{ 'notifications' | translate }}
+		</ion-list-header>
+		<ion-item>
+			<ion-icon name="md-notifications" item-left></ion-icon>
+			<ion-label>{{ 'enable_notifications' | translate }}</ion-label>
+			<ion-toggle [(ngModel)]="notify" (ionChange)="saveNotify()"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-icon name="calendar" item-left></ion-icon>
+			<ion-label>{{ 'days_before_release' | translate }}</ion-label>
+			<ion-select interface="action-sheet" [(ngModel)]="notifyDaysBefore" (ionChange)="saveNotifyDaysBefore()">
+				<ion-option value="0">0 {{ 'days' | translate }}</ion-option>
+				<ion-option value="1">1 {{ 'days' | translate }}</ion-option>
+				<ion-option value="3">3 {{ 'days' | translate }}</ion-option>
+				<ion-option value="5">5 {{ 'days' | translate }}</ion-option>
+				<ion-option value="7">7 {{ 'days' | translate }}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-icon name="time" item-left></ion-icon>
+			<ion-label>{{ 'time' | translate }}</ion-label>
+			<ion-datetime displayFormat="HH:mm" [(ngModel)]="notifyTime" (ionChange)="saveNotifyTime()"></ion-datetime>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			{{ 'premium' | translate }}
+		</ion-list-header>
+		<ion-item>
+			<ion-label>{{ 'theme' | translate }}</ion-label>
+			<ion-icon name="md-contrast" item-left></ion-icon>
+		  	<ion-select interface="popover" [(ngModel)]="theme" (ionChange)="saveTheme()">
+		    	<ion-option value="morfilms-light-theme">{{ 'morfilms-light-theme' | translate }}</ion-option>
+		    	<ion-option value="morfilms-dark-theme">{{ 'morfilms-dark-theme' | translate }}</ion-option>
+		    	<ion-option value="green-room-theme">{{ 'green-room-theme' | translate }}</ion-option>
+		    	<ion-option value="blue-velvet-theme">{{ 'blue-velvet-theme' | translate }}</ion-option>
+		    	<ion-option value="spiderman-theme">{{ 'spiderman-theme' | translate }}</ion-option>
+		  	</ion-select>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			{{ 'about' | translate }}
+		</ion-list-header>
+		<a ion-item [href]="platform.is('ios') ? 'https://itunes.apple.com/us/app/morfilms-upcoming-movies-list/id1207671266?ls=1&mt=8' : 'https://play.google.com/store/apps/details?id=eu.morfilms.watchlist'">
+			<ion-icon name="md-star" item-left></ion-icon>
+			{{ 'app_rate' | translate }}
+		</a>
+		<a ion-item href="https://www.themoviedb.org/documentation/editing/movies">
+			<ion-icon name="md-help-circle" item-left></ion-icon>
+			{{ 'how_to_edit_data' | translate }}
+		</a>
+		<a ion-item href="mailto:morfilms.media@icloud.com?subject=Watchlist by Morfilms - Feedback">
+			<ion-icon name="md-mail" item-left></ion-icon>
+			{{ 'send_feedback' | translate }}
+		</a>
+		<a ion-item href="http://morfilms.eu">
+			<ion-icon name="ios-compass" item-left></ion-icon>
+			{{ 'morfilms_website' | translate }}
+		</a>
+		<a ion-item href="https://twitter.com/MorfilmsMedia">
+			<ion-icon name="logo-twitter" item-left></ion-icon>
+			{{ 'morfilms_twitter' | translate }}
+		</a>
+		<a ion-item href="https://www.facebook.com/MorfilmsMedia">
+			<ion-icon name="logo-facebook" item-left></ion-icon>
+			{{ 'morfilms_facebook' | translate }}
+		</a>
+		<a ion-item href="https://instagram.com/MorfilmsMedia">
+			<ion-icon name="logo-instagram" item-left></ion-icon>
+			{{ 'morfilms_instagram' | translate }}
+		</a>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			{{ 'advanced' | translate }}
+		</ion-list-header>
+    	<button ion-item (click)="showSync()">
+      		<ion-icon name="md-swap" item-left></ion-icon>
+      		{{ 'settings_sync_title' | translate }}
+    	</button>
+		<button ion-item (click)="showOpensource()">
+      		<ion-icon name="ios-construct" item-left></ion-icon>
+      		{{ 'opensource' | translate }}
+    	</button>
+	</ion-list>
+
+</ion-content>

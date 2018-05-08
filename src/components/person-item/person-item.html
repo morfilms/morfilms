@@ -1,0 +1,5 @@
+<div tappable class="person-item" (tap)="showPersonDetails()">
+	<div class="person-photo" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w92' + person.profile_path + ')'}"></div>
+	<div class="person-name"><b>{{person.name}}</b></div>
+	<div class="person-tagline">{{person.character ? person.character : (person.job ? person.job : 'Person')}}</div>
+</div>

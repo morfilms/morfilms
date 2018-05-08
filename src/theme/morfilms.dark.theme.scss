@@ -1,0 +1,81 @@
+$dark-text: #FFFFFF;
+$dark-base: #2A2A2A;
+$dark-primary: #171717;
+$dark-secondary: #212121;
+
+.morfilms-dark-theme {
+
+	ion-content {
+		background-color: $dark-base;
+		color: $dark-text;
+	}
+
+	.toolbar-background {
+		background-color: $dark-primary !important;
+	}
+
+	.toolbar-title {
+		color: $dark-text !important;
+	}
+
+	.bar-button {
+		color: $dark-text !important;
+	}
+
+	.tabbar {
+		border-color: $dark-secondary !important;
+		background-color: $dark-primary !important;
+	}
+
+	.tab-button-icon {
+		color: $dark-text !important;
+	}
+
+	.item {
+		color: $dark-text;
+	}
+
+	.item-input {
+		background-color: $dark-base !important;
+	}
+
+	.fab-md-secondary {
+		color: $dark-text !important;
+		background-color: $dark-primary !important;
+	}
+
+	// MD
+
+	.list-md {
+		background-color: $dark-secondary;
+	}
+
+	.item-md {
+		background-color: $dark-secondary;
+	}
+
+	.list-header-md {
+		background-color: $dark-secondary;
+	}
+
+	// IOS
+
+	.item-ios {
+		background-color: $dark-secondary;
+	}
+
+	.list-header-ios {
+		background-color: $dark-base;
+	}
+
+	// MORFILMS
+
+	.list-film-days-remaining {
+		background-color: $dark-primary !important;
+	}
+
+	.list-film-card {
+		background-color: $dark-secondary !important;
+	}
+
+}

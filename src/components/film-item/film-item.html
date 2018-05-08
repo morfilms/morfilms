@@ -1,0 +1,11 @@
+<div class="film-item">
+	<div tappable class="film-poster" (tap)="showFilmDetails()" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w92' + film.poster_path + ')'}"></div>
+	<div tappable class="film-title" (tap)="showFilmDetails()"><b>{{film.title}}</b></div>
+	<div tappable class="film-tagline" (tap)="showFilmDetails()">{{film.job ? film.job : film.release_date.split('-')[0]}}</div>
+	<div tappable class="add-btn" (tap)="addFilm()" *ngIf="!film.added">
+		<ion-icon name="md-add"></ion-icon>
+	</div>
+	<div tappable class="add-btn" (tap)="removeFilm()" *ngIf="film.added">
+		<ion-icon name="md-checkmark"></ion-icon>
+	</div>
+</div>

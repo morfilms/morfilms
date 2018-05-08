@@ -1,0 +1,22 @@
+page-person-details {
+	.person-avatar {
+		width: 150px;
+		height: 150px;
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center 25%;
+		border-radius: 50%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+		box-shadow: 0px 0px 4px 0 rgba(0,0,0,0.40);
+	}
+
+	.person-name {
+		font-size: 21px;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+}

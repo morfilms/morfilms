@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-navbar color="dark" *ngIf="platform.is('ios')" style="height:calc(44px + 20px); min-height:calc(44px + 20px); padding-top:20px;">
+		<ion-title style="padding-top:14px !important;">{{ 'settings_sync_title' | translate }}</ion-title>
+	</ion-navbar>
+
+	<ion-navbar color="dark" *ngIf="platform.is('android')">
+		<ion-title>{{ 'settings_sync_title' | translate }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<p>
+		{{ 'export_text' | translate }}
+	</p>
+	<button ion-button icon-left block color="secondary" (click)="export()">
+		{{ 'export' | translate }}
+	</button>
+	<p>
+		{{ 'import_text' | translate }}
+	</p>
+	<button ion-button icon-left block (click)="import()">
+		{{ 'import' | translate }}
+	</button>
+</ion-content>

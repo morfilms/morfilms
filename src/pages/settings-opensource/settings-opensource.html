@@ -1,0 +1,60 @@
+<ion-header>
+	<ion-navbar color="dark" *ngIf="platform.is('ios')" style="height:calc(44px + 20px); min-height:calc(44px + 20px); padding-top:20px;">
+		<ion-title style="padding-top:14px !important;">{{ 'settings_opensource_title' | translate }}</ion-title>
+	</ion-navbar>
+
+	<ion-navbar color="dark" *ngIf="platform.is('android')">
+		<ion-title>{{ 'settings_opensource_title' | translate }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<br *ngIf="platform.is('ios')">
+	<ion-list>
+		<ion-list-header>
+			{{ 'film_data' | translate }}
+		</ion-list-header>
+		<a ion-item href="http://themoviedb.org">
+      themoviedb.org
+    </a>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			{{ 'framework_libs' | translate }}
+		</ion-list-header>
+		<a ion-item href="https://angular.io">
+      angular
+    </a>
+		<a ion-item href="https://github.com/ratson/cordova-plugin-admob-free">
+      cordova-plugin-admob-free
+    </a>
+		<a ion-item href="https://github.com/apache/cordova-plugin-globalization">
+      cordova-plugin-globalization
+    </a>
+		<a ion-item href="https://github.com/katzer/cordova-plugin-local-notifications">
+      cordova-plugin-local-notifications
+    </a>
+		<a ion-item href="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin">
+      cordova-plugin-x-socialsharing
+    </a>
+		<a ion-item href="http://ionicframework.com">
+      ionicframework
+    </a>
+		<a ion-item href="https://github.com/ionic-team/ionic-plugin-deeplinks">
+      ionic-plugin-deeplinks
+    </a>
+		<a ion-item href="https://momentjs.com">
+      moment.js
+    </a>
+		<a ion-item href="https://github.com/jsmreese/moment-duration-format">
+      moment-duration-format
+    </a>
+		<a ion-item href="https://github.com/ngx-translate/core">
+      ngx-translate
+    </a>
+		<a ion-item href="https://kimmobrunfeldt.github.io/progressbar.js/">
+      progressbar.js
+    </a>
+	</ion-list>
+</ion-content>

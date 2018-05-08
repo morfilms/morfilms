@@ -1,0 +1,82 @@
+$spiderman-text: #0b0b0b;
+$spiderman-base: #f4f4f4;
+$spiderman-primary: #E53935;
+$spiderman-secondary: #2196F3;
+
+.spiderman-theme {
+
+	ion-content {
+		background-color: $spiderman-base;
+		color: $spiderman-text;
+	}
+
+	.toolbar-background {
+		background-color: $spiderman-primary !important;
+	}
+
+	.toolbar-title {
+		color: $spiderman-text !important;
+	}
+
+	.bar-button {
+		color: $spiderman-text !important;
+	}
+
+	.tabbar {
+		background-color: $spiderman-primary !important;
+	}
+
+	.tab-button-icon {
+		color: $spiderman-text !important;
+	}
+
+	.item {
+		color: $spiderman-text;
+	}
+
+	.item-input {
+		background-color: $spiderman-base !important;
+	}
+
+	.fab-md-secondary {
+		color: $spiderman-text !important;
+		background-color: $spiderman-secondary !important;
+	}
+
+	// MD
+
+	.list-md {
+		background-color: $spiderman-base;
+	}
+
+	.item-md {
+		background-color: $spiderman-base;
+	}
+
+	.list-header-md {
+		background-color: $spiderman-base;
+	}
+
+	// IOS
+
+	.item-ios {
+		background-color: $spiderman-base;
+	}
+
+	.list-header-ios {
+		background-color: $spiderman-base;
+	}
+
+	// MORFILMS
+
+	.list-film-days-remaining {
+		color: $spiderman-text !important;
+		background-color: $spiderman-secondary !important;
+		border-color: $spiderman-text !important;
+	}
+
+	.list-film-card {
+		background-color: $spiderman-secondary !important;
+	}
+
+}

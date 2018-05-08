@@ -1,0 +1,11 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>{{ title | translate }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ng-container *ngFor="let person of people">
+		<person-item [person]="person"></person-item>
+	</ng-container>
+</ion-content>

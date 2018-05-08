@@ -1,0 +1,25 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>{{ 'search_title' | translate }}</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="openSettings()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-item>
+		<ion-input type="text" placeholder="{{ 'search_film' | translate }}" [(ngModel)]="searchQuery" (input)="searchFilm()" (ionFocus)="textFocus()" (ionBlur)="textBlur()"></ion-input>
+	</ion-item>
+
+	<br>
+	<p text-uppercase *ngIf="!emptyMessage">{{searching ? ('search_results' | translate) : ('top_upcoming' | translate)}}</p>
+
+	<ng-container *ngFor="let searchItem of searchResults">
+		<film-item [film]="searchItem" *ngIf="searchItem.media_type == 'movie' || !searchItem.media_type"></film-item>
+		<person-item [person]="searchItem" *ngIf="searchItem.media_type == 'person' && searchItem.profile_path"></person-item>
+	</ng-container>
+
+</ion-content>
