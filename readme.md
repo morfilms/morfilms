@@ -29,7 +29,7 @@ $ npm install
 $ ionic cordova platform add ios
 $ ionic cordova platform add android
 ```
-4. You need your own [themoviedb api key](https://www.themoviedb.org/faq/api?language=en). Replace *src/providers/tmdb.ts* - API_KEY wit it.
+4. You need your own [themoviedb api key](https://www.themoviedb.org/faq/api?language=en). Replace *src/providers/tmdb.ts* - API_KEY with it.
 5. Build your project ([all options](https://ionicframework.com/docs/cli/cordova/build/)).
 ```console
 $ ionic cordova build ios
@@ -40,6 +40,6 @@ $ ionic cordova build android
 
 
 ## About
-I made morfilms as a simple app for me to organise films that I wanted to watch...
+I made morfilms as a simple app for me to organise films I wanted to watch in theaters. It started as a simple application, just film names and release dates, but I kept improving the app and finally I decided to publish it for android and iOS - [featured in applesfera (spanish)](https://www.applesfera.com/aplicaciones-ios-1/con-morfilms-ya-no-te-tienes-que-preocupar-de-cuando-se-estrena-una-pelicula-app-de-la-semana). It's been a few months since the last update, I still have a lot of ideas, but no free time left so I'm publishing the code for free.
 
 If you like the project you can support me downloading official Morfilms release from the store on [iOS](https://itunes.apple.com/us/app/morfilms-upcoming-movies-list/id1207671266?ls=1&mt=8) and [Android](https://play.google.com/store/apps/details?id=eu.morfilms.watchlist). It's free with ads, but you can disable ads (and unlock themes) if you buy Morfilms Premium as an in-app-purchase.
