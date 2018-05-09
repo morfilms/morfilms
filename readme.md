@@ -20,14 +20,23 @@ Feature list:
 ## How to install
 1. Install [nodejs+npm](https://nodejs.org/en/), [ionic](https://ionicframework.com/getting-started) and [cordova](https://cordova.apache.org).
 2. Go to the project folder and install node modules.
-> npm install
+```console
+$ cd morfilms
+$ npm install
+```
 3. Add the platform you need.
-> ionic cordova platform add [ios/android]
+```console
+$ ionic cordova platform add ios
+$ ionic cordova platform add android
+```
 4. You need your own [themoviedb api key](https://www.themoviedb.org/faq/api?language=en). Replace *src/providers/tmdb.ts* - API_KEY wit it.
-5. Build your project.
-> ionic cordova build [ios/android]
+5. Build your project ([all options](https://ionicframework.com/docs/cli/cordova/build/)).
+```console
+$ ionic cordova build ios
+$ ionic cordova build android
+```
 6. Your ios build will generate an xcode project (*platforms/ios*), open and run it.
-7. The android apk is located at *platforms/android*
+7. The generated android apk is located at *platforms/android/build/outputs/apk*.
 
 
 ## About

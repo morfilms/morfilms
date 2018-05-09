@@ -29,8 +29,6 @@ export class DataService {
 	notifyTime: String;
 
 	// SETTINGS - PREMIUM
-	disableAds: Boolean;
-	premiumUnlocked: Boolean;
 	theme: BehaviorSubject<String> = new BehaviorSubject<String>('');
 
 	constructor(
@@ -231,54 +229,6 @@ export class DataService {
 		return Observable.create((observer) => {
 			this.notifyTime = notifyTime;
 			this.storage.set('settings.notifyTime', notifyTime)
-				.then(() => { observer.next(); observer.complete(); });
-		});
-	}
-
-	getDisableAds() {
-		return Observable.create((observer) => {
-			if (this.disableAds) {
-				observer.next(this.disableAds);
-				observer.complete();
-			} else {
-				this.storage.get('settings.disableAds')
-					.then((disableAds) => {
-						this.disableAds = disableAds;
-						observer.next(this.disableAds);
-						observer.complete();
-					});
-			}
-		});
-	}
-
-	setDisableAds(disableAds) {
-		return Observable.create((observer) => {
-			this.disableAds = disableAds;
-			this.storage.set('settings.disableAds', disableAds)
-				.then(() => { observer.next(); observer.complete(); });
-		});
-	}
-
-	getPremiumUnlocked() {
-		return Observable.create((observer) => {
-			if (this.premiumUnlocked) {
-				observer.next(this.premiumUnlocked);
-				observer.complete();
-			} else {
-				this.storage.get('settings.premiumUnlocked')
-					.then((premiumUnlocked) => {
-						this.premiumUnlocked = premiumUnlocked;
-						observer.next(this.premiumUnlocked);
-						observer.complete();
-					});
-			}
-		});
-	}
-
-	setPremiumUnlocked(premiumUnlocked) {
-		return Observable.create((observer) => {
-			this.premiumUnlocked = premiumUnlocked;
-			this.storage.set('settings.premiumUnlocked', premiumUnlocked)
 				.then(() => { observer.next(); observer.complete(); });
 		});
 	}

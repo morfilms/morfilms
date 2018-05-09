@@ -18,7 +18,6 @@ export class SearchPage {
 	country: String;
 	language: String;
 
-	showAds: Boolean;
 	emptyMessage: Boolean;
 	searching: Boolean;
 	searchQuery: String;
@@ -36,7 +35,6 @@ export class SearchPage {
 
 		this.translate.setDefaultLang('en');
 
-		this.showAds = true;
 		this.emptyMessage = true;
 		this.searching = false;
 		this.searchQuery = "";
@@ -69,14 +67,9 @@ export class SearchPage {
 	}
 
 	textFocus() {
-		this.showAds = false;
 		this.searchQuery = "";
 		this.searchFilm();
 
-	}
-
-	textBlur() {
-		this.showAds = true;
 	}
 
 	setAdded() {

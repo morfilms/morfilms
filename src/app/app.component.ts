@@ -83,8 +83,6 @@ export class MyApp {
 				this.dataService.setNotify(true).subscribe();
 				this.dataService.setNotifyDaysBefore('0').subscribe();
 				this.dataService.setNotifyTime('09:00').subscribe();
-
-				this.dataService.setDisableAds(false).subscribe();
 			} else {
 				this.dataService.getLanguage()
 					.subscribe((language) => {

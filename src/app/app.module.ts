@@ -7,7 +7,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { AdMobFree } from '@ionic-native/admob-free';
 import { Clipboard } from '@ionic-native/clipboard';
 import { Deeplinks } from '@ionic-native/deeplinks';
 import { Globalization } from '@ionic-native/globalization';
@@ -63,7 +62,6 @@ import { MyApp } from './app.component';
     FilmDetailsPage
   ],
   providers: [
-    AdMobFree,
     Clipboard,
     Deeplinks,
     Globalization,
