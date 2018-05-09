@@ -13,16 +13,10 @@ Feature list:
 - Beautiful (and not so beautiful) themes.
 - Free to use with no ads.
 
-<img src="screenshots/search_morfilms.png" width="24%">
-<img src="screenshots/search_nightcrawler.png" width="24%">
-<img src="screenshots/upcoming_list.png" width="24%">
-<img src="screenshots/film_datails.png" width="24%">
+<img src="screenshots/search_morfilms.png" width="23%" border="1"> <img src="screenshots/search_nightcrawler.png" width="23%" border="1"> <img src="screenshots/upcoming_list.png" width="23%" border="1"> <img src="screenshots/film_datails.png" width="23%" border="1">
 
 I made morfilms as a simple app for me to organise films that I wanted to watch...
 
-<img src="screenshots/new_theaters.png" width="24%">
-<img src="screenshots/cast_crew.png" width="24%">
-<img src="screenshots/person_details.png" width="24%">
-<img src="screenshots/settings.png" width="24%">
+<img src="screenshots/new_theaters.png" width="23%" border="1"> <img src="screenshots/cast_crew.png" width="23%" border="1"> <img src="screenshots/person_details.png" width="23%" border="1"> <img src="screenshots/settings.png" width="23%" border="1">
 
-If you like the project you can support me downloading official Morfilms release from the store on [iOS]() and [Android](). It's free with ads, but you can disable ads (and unlock themes) if you buy Morfilms Premium as an in-app-purchase.
+If you like the project you can support me downloading official Morfilms release from the store on [iOS](https://itunes.apple.com/us/app/morfilms-upcoming-movies-list/id1207671266?ls=1&mt=8) and [Android](https://play.google.com/store/apps/details?id=eu.morfilms.watchlist). It's free with ads, but you can disable ads (and unlock themes) if you buy Morfilms Premium as an in-app-purchase.
