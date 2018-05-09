@@ -22,12 +22,10 @@ Feature list:
 2. Go to the project folder and install node modules.
 > npm install
 3. Add the platform you need.
-> ionic cordova platform add ios
-> ionic cordova platform add android
-4. You need your own [themoviedb api key](https://www.themoviedb.org/faq/api?language=en). When you have it open *src/providers/tmdb.ts* and paste your key into the API_KEY variable.
+> ionic cordova platform add [ios/android]
+4. You need your own [themoviedb api key](https://www.themoviedb.org/faq/api?language=en). Replace *src/providers/tmdb.ts* - API_KEY wit it.
 5. Build your project.
-> ionic cordova build ios
-> ionic cordova build android
+> ionic cordova build [ios/android]
 6. Your ios build will generate an xcode project (*platforms/ios*), open and run it.
 7. The android apk is located at *platforms/android*
 
