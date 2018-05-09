@@ -33,8 +33,3 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-
-resources/android/icon/
-resources/android/splash/
-resources/ios/icon/
-resources/ios/splash/
