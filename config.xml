@@ -2,7 +2,7 @@
 <widget id="eu.morfilms.free" version="2.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Morfilms</name>
     <description>Film release and watchlist app.</description>
-    <author email="morfilms.media@icloud.com" href="http://morfilms.eu/">Carlos Tacón - Morfilms</author>
+    <author email="morfilms.media@icloud.com" href="http://morfilms.link/">Carlos Tacón - Morfilms</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
