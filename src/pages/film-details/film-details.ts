@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Platform, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
 import { DataService } from '../../providers/data';
@@ -26,7 +26,8 @@ export class FilmDetailsPage {
 
 	constructor(
 		private dataService: DataService,
-		private navCtrl: NavController,
+    private navCtrl: NavController,
+    public toastCtrl: ToastController,
 		private navigation: NavigationService,
 		private params: NavParams,
 		private platform: Platform,
@@ -188,7 +189,35 @@ export class FilmDetailsPage {
 			.subscribe(() => {
 				this.film.added = true;
 			});
-	}
+  }
+
+
+  canDownload() {
+    return this.platform.is('ios');
+  }
+  downloadMediaBackdrop() {
+    this.sharingService.shareToPhotos(this.film.backdrop_path);
+    this.translate.get('toast_download').subscribe((toast_download) => {
+			let toast = this.toastCtrl.create({
+				message: toast_download,
+				duration: 1500,
+				position: 'bottom'
+			});
+			toast.present();
+		});
+  }
+
+  downloadMediaPoster() {
+    this.sharingService.shareToPhotos(this.film.poster_path);
+    this.translate.get('toast_download').subscribe((toast_download) => {
+			let toast = this.toastCtrl.create({
+				message: toast_download,
+				duration: 1500,
+				position: 'bottom'
+			});
+			toast.present();
+		});
+  }
 }
 
 interface Duration extends moment.Duration {

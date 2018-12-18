@@ -126,5 +126,10 @@
 
 	"notification_days": "¡$1 se estrena en $2 días!",
 	"notification_today": "¡$1 se estrena hoy!",
-	"notification_tomorrow": "¡$1 se estrena mañana!"
+  "notification_tomorrow": "¡$1 se estrena mañana!",
+
+  "download_media": "Descargar Multimedia",
+  "download_backdrop": "Descargar Cabecera",
+  "download_poster": "Descargar Póster",
+  "toast_download": "Imagen Descargada OK"
 }

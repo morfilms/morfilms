@@ -88,6 +88,18 @@
       <ion-icon name="share-alt" item-left></ion-icon>
       {{ 'share_film' | translate }}
     </button>
+  </ion-list>
+
+  <ion-list *ngIf="(film.backdrop_path || film.poster_path) && canDownload()">
+		<ion-list-header>
+			{{ 'download_media' | translate }}
+    </ion-list-header>
+    <button ion-item *ngIf="film.backdrop_path" (click)="downloadMediaBackdrop()">
+      {{ 'download_backdrop' | translate }}
+    </button>
+    <button ion-item *ngIf="film.poster_path" (click)="downloadMediaPoster()">
+      {{ 'download_poster' | translate }}
+    </button>
 	</ion-list>
 
 </ion-content>

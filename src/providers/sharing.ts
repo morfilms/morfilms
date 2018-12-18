@@ -36,5 +36,9 @@ export class SharingService {
 				);
 			});
 		});
+  }
+
+  shareToPhotos(photoID) {
+    this.socialSharing.saveToPhotoAlbum("https://image.tmdb.org/t/p/original/" + photoID);
 	}
 }

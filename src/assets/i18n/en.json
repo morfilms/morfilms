@@ -126,5 +126,10 @@
 
 	"notification_days": "$1 to be released in $2 days!",
 	"notification_today": "$1 to be released today!",
-	"notification_tomorrow": "$1 to be released tomorrow!"
+  "notification_tomorrow": "$1 to be released tomorrow!",
+
+  "download_media": "Download Media",
+  "download_backdrop": "Download Backdrop",
+  "download_poster": "Download Poster",
+  "toast_download": "Picture Downloaded OK"
 }
